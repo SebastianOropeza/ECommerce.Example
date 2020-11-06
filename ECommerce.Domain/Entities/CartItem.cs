@@ -10,35 +10,35 @@ namespace ECommerce.Domain.Entities
         public long ProductId { get; private set; }
         public Product Product { get; private set; }
         public int Quantity { get; private set; }
-        public int TotalPrice { get; private set; }
+        public decimal TotalPrice { get; private set; }
 
         private CartItem() { }
         public CartItem(Product product, int quantity = 1)
         {
             Product = product;
             Quantity = quantity;
-            TotalPrice = (int)(Quantity * Product.UnitPrice);
+            CalculateTotalPrice();
         }
 
         public void AddItem()
         {
             Quantity++;
-            RecalculateTotalPrice();
+            CalculateTotalPrice();
         }
         public void AddItems(int quantity)
         {
             Quantity += quantity;
-            RecalculateTotalPrice();
+            CalculateTotalPrice();
         }
         public void RemoveItem()
         {
             Quantity--;
-            RecalculateTotalPrice();
+            CalculateTotalPrice();
         }
 
-        private void RecalculateTotalPrice()
+        private void CalculateTotalPrice()
         {
-            TotalPrice = (int)(Quantity * Product.UnitPrice);
+            TotalPrice = Quantity * Product.UnitPrice;
         }
     }
 }

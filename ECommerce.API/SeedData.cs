@@ -38,10 +38,11 @@ namespace ECommerce.API
         }
         private static void SeedCarts(ECommerceContext context)
         {
+            var product = context.Products.FirstOrDefault(e => e.Id == 1);
             context.Carts.Add(
                 new Cart(new List<CartItem>()
                 {
-                    new CartItem(new Product("T-Shirt", "Clothes", 50, 14.99M))
+                    new CartItem(product)
                 })
             );
             context.SaveChanges();

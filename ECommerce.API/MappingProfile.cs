@@ -13,6 +13,8 @@ namespace ECommerce.API
         public MappingProfile()
         {
             CreateMap<Product, ProductDto>();
+            CreateMap<Cart, CartDto>();
+            CreateMap<CartItem, CartItemDto>();
         }
     }
 }

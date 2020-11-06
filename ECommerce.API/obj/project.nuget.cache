@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ym8RNSzcilvNqSy6O50+Z0mqKLELtPHHselYVZvmQ3ijc9iXzhpTLXQx7GgOrKV6ERBdaw7wKYXIVxrpa/EG8g==",
+  "dgSpecHash": "xWtZ1IgvH98SW5l94GCkrpYR6JvjF87uQriWGb63wX1NLC8JgMkMs4Ck8CfUNIkIli5MiHk2VwTXpqc3/ESxYQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sebastian.Sebas\\source\\repos\\ECommerce.Example\\ECommerce.API\\ECommerce.API.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,10 @@
     "C:\\Users\\Sebastian.Sebas\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.9\\microsoft.extensions.logging.abstractions.3.1.9.nupkg.sha512",
     "C:\\Users\\Sebastian.Sebas\\.nuget\\packages\\microsoft.extensions.options\\3.1.9\\microsoft.extensions.options.3.1.9.nupkg.sha512",
     "C:\\Users\\Sebastian.Sebas\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.9\\microsoft.extensions.primitives.3.1.9.nupkg.sha512",
+    "C:\\Users\\Sebastian.Sebas\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Sebastian.Sebas\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\5.6.3\\swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
+    "C:\\Users\\Sebastian.Sebas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\5.6.3\\swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
+    "C:\\Users\\Sebastian.Sebas\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\5.6.3\\swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
     "C:\\Users\\Sebastian.Sebas\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\Sebastian.Sebas\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\Sebastian.Sebas\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",

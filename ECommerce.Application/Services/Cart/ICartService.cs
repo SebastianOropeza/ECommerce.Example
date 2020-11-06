@@ -8,6 +8,7 @@ namespace ECommerce.Application.Services
     public interface ICartService
     {
         public IEnumerable<Cart> GetCarts();
+        public Cart GetById(long id);
         public void AddToCart(long cartId, long productId);
     }
 }

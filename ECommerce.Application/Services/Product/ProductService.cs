@@ -13,6 +13,12 @@ namespace ECommerce.Domain.Services
         {
             this.productRepository = productRepository;
         }
+
+        public Product GetById(long id)
+        {
+            return productRepository.GetById(id);
+        }
+
         public IEnumerable<Product> GetProducts()
         {
             var products = productRepository.GetAll();

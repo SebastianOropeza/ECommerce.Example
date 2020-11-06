@@ -28,6 +28,11 @@ namespace ECommerce.Application.Services
             cartRepository.Commit();
         }
 
+        public Cart GetById(long id)
+        {
+            return cartRepository.GetById(id);
+        }
+
         public IEnumerable<Cart> GetCarts()
         {
             var carts = cartRepository.GetAll();

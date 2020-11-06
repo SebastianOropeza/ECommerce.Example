@@ -17,6 +17,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace ECommerce.API
 {
@@ -41,6 +42,11 @@ namespace ECommerce.API
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<ICartService, CartService>();
             services.AddTransient<ICartRepository, CartRepository>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc(name: "v1", new OpenApiInfo { Title = "ECommerce Example", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +58,13 @@ namespace ECommerce.API
             }
 
             app.UseHttpsRedirection();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ECommerce Example ");
+            });
 
             app.UseRouting();
 

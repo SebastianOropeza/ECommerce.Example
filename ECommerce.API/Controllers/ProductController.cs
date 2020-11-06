@@ -38,9 +38,11 @@ namespace ECommerce.API.Controllers
 
         // GET api/<ProductController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ProductDto Get(long id)
         {
-            return "value";
+            var product = productService.GetById(id);
+            var productDto = mapper.Map<ProductDto>(product);
+            return productDto;
         }
 
         // POST api/<ProductController>
@@ -54,12 +56,6 @@ namespace ECommerce.API.Controllers
         // PUT api/<ProductController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ProductController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
         {
         }
     }

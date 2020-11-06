@@ -19,7 +19,7 @@
     },
     "ECommerce.API": {
       "commandName": "Project",
-      "launchUrl": "weatherforecast",
+      "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

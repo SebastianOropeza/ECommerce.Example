@@ -8,5 +8,6 @@ namespace ECommerce.Domain.Services
     public interface IProductService
     {
         public IEnumerable<Product> GetProducts();
+        public Product GetById(long id);
     }
 }

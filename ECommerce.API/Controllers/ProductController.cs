@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using ECommerce.Application.Dtos;
+using ECommerce.API.Dtos;
 using ECommerce.Application.Services;
 using ECommerce.Domain.Entities;
 using ECommerce.Domain.Services;
@@ -18,16 +18,14 @@ namespace ECommerce.API.Controllers
     public class ProductController : ControllerBase
     {
         private readonly IProductService productService;
-        private readonly ICartService cartService;
         private readonly IMapper mapper;
 
-        public ProductController(IProductService productService, ICartService cartService, IMapper mapper)
+        public ProductController(IProductService productService, IMapper mapper)
         {
             this.productService = productService;
-            this.cartService = cartService;
             this.mapper = mapper;
         }
-        // GET: api/<ProductController>
+
         [HttpGet]
         public IEnumerable<ProductDto> GetProducts()
         {
@@ -36,27 +34,12 @@ namespace ECommerce.API.Controllers
             return productDtos;
         }
 
-        // GET api/<ProductController>/5
         [HttpGet("{id}")]
         public ProductDto Get(long id)
         {
             var product = productService.GetById(id);
             var productDto = mapper.Map<ProductDto>(product);
             return productDto;
-        }
-
-        // POST api/<ProductController>
-        [HttpPost]
-        public ActionResult AddToCart(AddToCartRequestDto requestDto)
-        {
-            cartService.AddToCart(requestDto.CartId, requestDto.ProductId);
-            return Ok();
-        }
-
-        // PUT api/<ProductController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ECommerce.Application.Dtos;
+using ECommerce.API.Dtos;
 using ECommerce.Domain.Entities;
 using System;
 using System.Collections.Generic;

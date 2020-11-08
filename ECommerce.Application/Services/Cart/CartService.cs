@@ -38,5 +38,11 @@ namespace ECommerce.Application.Services
             var carts = cartRepository.GetAll();
             return carts.ToList();
         }
+
+        public void RemoveFromCart(long cartId, long productId)
+        {
+            var cart = GetById(cartId);
+            cart.RemoveCartItem(productId);
+        }
     }
 }

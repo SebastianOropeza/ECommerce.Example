@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ECommerce.Application.Dtos
+namespace ECommerce.API.Dtos
 {
-    public class AddToCartRequestDto
+    public class CartProductRequestDto
     {
         [Required]
         public long CartId { get; set; }

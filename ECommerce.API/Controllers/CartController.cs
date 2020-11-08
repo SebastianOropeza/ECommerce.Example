@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ECommerce.API.Dtos;
 using ECommerce.Application.Services;
 using ECommerce.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +31,20 @@ namespace ECommerce.API.Controllers
         public Cart Get(long id)
         {
             return cartService.GetById(id);
+        }
+
+        [HttpPost("AddProduct")]
+        public ActionResult AddProduct(CartProductRequestDto requestDto)
+        {
+            cartService.AddToCart(requestDto.CartId, requestDto.ProductId);
+            return Ok();
+        }
+
+        [HttpPost("RemoveProduct")]
+        public ActionResult RemoveProduct(CartProductRequestDto requestDto)
+        {
+            cartService.AddToCart(requestDto.CartId, requestDto.ProductId);
+            return Ok();
         }
     }
 }

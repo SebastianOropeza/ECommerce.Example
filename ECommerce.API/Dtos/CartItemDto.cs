@@ -1,4 +1,4 @@
-﻿namespace ECommerce.Application.Dtos
+﻿namespace ECommerce.API.Dtos
 {
     public class CartItemDto
     {

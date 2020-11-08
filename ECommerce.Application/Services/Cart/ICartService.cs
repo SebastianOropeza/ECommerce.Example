@@ -10,5 +10,6 @@ namespace ECommerce.Application.Services
         public IEnumerable<Cart> GetCarts();
         public Cart GetById(long id);
         public void AddToCart(long cartId, long productId);
+        public void RemoveFromCart(long cartId, long productId);
     }
 }

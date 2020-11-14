@@ -1,4 +1,5 @@
-﻿using ECommerce.Domain.Entities;
+﻿using ECommerce.Application.Dtos;
+using ECommerce.Domain.Entities;
 using ECommerce.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,20 @@ namespace ECommerce.Domain.Services
         public ProductService(IProductRepository productRepository)
         {
             this.productRepository = productRepository;
+        }
+
+        public long Create(ProductDto productDto)
+        {
+            var alreadyExists = productRepository.GetByName(productDto.Name);
+            if (alreadyExists != null)
+                throw new Exception("The product already exists");
+
+            var product = new Product(productDto.Name, productDto.Category, productDto.UnitsInStock, productDto.UnitPrice);
+            var id = productRepository.Add(product);
+
+            productRepository.Commit();
+
+            return id;
         }
 
         public Product GetById(long id)

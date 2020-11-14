@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ECommerce.API.Dtos
+namespace ECommerce.Application.Dtos
 {
     public class CartDto
     {

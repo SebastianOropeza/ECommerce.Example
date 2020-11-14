@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using ECommerce.API.Dtos;
+using ECommerce.Application.Dtos;
 using ECommerce.Application.Services;
 using ECommerce.Domain.Entities;
 using ECommerce.Domain.Services;
@@ -40,6 +40,12 @@ namespace ECommerce.API.Controllers
             var product = productService.GetById(id);
             var productDto = mapper.Map<ProductDto>(product);
             return productDto;
+        }
+        [HttpPost]
+        public ActionResult Create(ProductDto productDto)
+        {
+            productService.Create(productDto);
+            return Ok();
         }
     }
 }

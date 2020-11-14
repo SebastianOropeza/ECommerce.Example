@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace ECommerce.API.Dtos
+namespace ECommerce.Application.Dtos
 {
     public class CartProductRequestDto
     {

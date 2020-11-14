@@ -2,6 +2,7 @@
 using ECommerce.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ECommerce.Infrastructure.Repositories
@@ -16,12 +17,13 @@ namespace ECommerce.Infrastructure.Repositories
 
         public long Add(Product entity)
         {
-            throw new NotImplementedException();
+            context.Add(entity);
+            return entity.Id;
         }
 
         public void Delete(long id)
         {
-            throw new NotImplementedException();
+            context.Remove(id);
         }
 
         public Product GetById(long id)
@@ -36,12 +38,17 @@ namespace ECommerce.Infrastructure.Repositories
 
         public void Update(Product entity)
         {
-            throw new NotImplementedException();
+            context.Update(entity);
         }
 
         public void Commit()
         {
             context.SaveChanges();
+        }
+
+        public Product GetByName(string name)
+        {
+            return context.Products.FirstOrDefault(p => p.Name == name);
         }
     }
 }

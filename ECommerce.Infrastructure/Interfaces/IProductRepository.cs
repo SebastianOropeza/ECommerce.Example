@@ -7,5 +7,6 @@ namespace ECommerce.Infrastructure.Interfaces
 {
     public interface IProductRepository : IRepository<Product>
     {
+        public Product GetByName(string name);
     }
 }

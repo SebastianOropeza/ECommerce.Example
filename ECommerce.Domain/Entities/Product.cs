@@ -16,8 +16,8 @@ namespace ECommerce.Domain.Entities
 
         public Product(string name, string category, int unitsInStock, decimal unitPrice = 0)
         {
-            Name = name;
-            Category = category;
+            Name = string.IsNullOrWhiteSpace(name) ? throw new Exception(nameof(Name) + " cannot be null or empty") : name;
+            Category = string.IsNullOrWhiteSpace(category) ? throw new Exception(nameof(Category) + " cannot be null or empty") : category;
             UnitsInStock = unitsInStock;
             UnitPrice = unitPrice;
         }

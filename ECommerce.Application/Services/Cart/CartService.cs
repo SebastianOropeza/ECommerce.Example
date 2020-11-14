@@ -22,6 +22,11 @@ namespace ECommerce.Application.Services
         public void AddToCart(long cartId, long productId)
         {
             var cart = cartRepository.GetById(cartId);
+            if (cart == null)
+            {
+                cart = new Cart(new List<CartItem>());
+                cartRepository.Add(cart);
+            }
             var product = productRepository.GetById(productId);
             cart.AddCartItem(product);
             cartRepository.Update(cart);
@@ -43,6 +48,8 @@ namespace ECommerce.Application.Services
         {
             var cart = GetById(cartId);
             cart.RemoveCartItem(productId);
+            cartRepository.Update(cart);
+            cartRepository.Commit();
         }
     }
 }
